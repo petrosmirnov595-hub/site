@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Принты на заказ | Шарья</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Общие настройки */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; }
+        a { text-decoration: none; }
+
+        /* ШАПКА (Hero Section) */
+        .hero {
+            /* Ссылка на картинку теперь обычная, без Python */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('static/sharya.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 { font-size: 2.5em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .hero p { font-size: 1.2em; max-width: 600px; margin: 0 auto 30px; }
+
+        /* Главная кнопка */
+        .btn-main {
+            background-color: #2ecc71; /* Цвет Телеграма */
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            font-weight: bold;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+            transition: 0.3s;
+        }
+        .btn-main:hover { transform: scale(1.05); background-color: #27ae60; }
+
+        /* Секция с товарами */
+        .catalog { padding: 50px 20px; text-align: center; background-color: #f9f9f9; }
+        .catalog h2 { font-size: 2em; margin-bottom: 40px; }
+
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+
+        /* Картинки товаров */
+        .card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .card-info { padding: 20px; }
+        .card-price { font-size: 1.2em; font-weight: bold; color: #e74c3c; margin-top: 10px; display: block; }
+
+        /* ПОДВАЛ (Контакты) */
+        .footer {
+            /* Фон для контактов */
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('static/contact_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        .contact-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 1.5em;
+            border: 2px solid white;
+            padding: 10px 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .contact-link:hover { background: white; color: black; }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Принты на заказ | Шарья</h1>
+        <p>Качественная печать на футболках и одежде. Сделаем твой уникальный стиль.</p>
+        <a href="https://t.me/petrsmirnov2004" class="btn-main">Заказать в Telegram</a>
+    </div>
+
+    <div class="catalog">
+        <h2>Наши работы</h2>
+        <div class="cards-container">
+
+            <div class="card">
+                <img src="static/photo1.jpg" alt="Принт с машиной">
+                <div class="card-info">
+                    <h3>Футболка с авто</h3>
+                    <p>Любые марки, высокое качество печати.</p>
+                    <span class="card-price">от 1200 ₽</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="static/photo2.jpg" alt="Авторский принт">
+                <div class="card-info">
+                    <h3>Авторский дизайн</h3>
+                    <p>Твоя идея — наше исполнение.</p>
+                    <span class="card-price">от 1000 ₽</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="static/photo3.jpg" alt="Парные футболки">
+                <div class="card-info">
+                    <h3>Парные футболки</h3>
+                    <p>Отличный подарок для двоих.</p>
+                    <span class="card-price">от 1900 ₽ (за две)</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <h2>Свяжитесь с нами</h2>
+        <p>Готовы сделать заказ или есть вопросы?</p>
+        <p>Телефон: +7 (953) 641-50-81</p>
+
+        <a href="https://t.me/petrsmirnov2004" class="contact-link">Написать в Telegram</a>
+    </div>
+
+</body>
+</html>
