@@ -6,169 +6,136 @@
     <title>Принты на заказ | Шарья</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Общие настройки */
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; }
-        a { text-decoration: none; }
-
-        /* ШАПКА (Hero Section) */
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; }
+        
+        /* Шапка с фоном sharya.jpg */
         .hero {
-            /* Ссылка на картинку теперь обычная, без Python */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('static/sharya.jpg');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('static/sharya.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 100px 20px;
+            padding: 120px 20px;
             text-align: center;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
-        .hero h1 { font-size: 2.5em; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
-        .hero p { font-size: 1.2em; max-width: 600px; margin: 0 auto 30px; }
+        .hero h1 { font-size: 3em; margin-bottom: 10px; }
 
-        /* Главная кнопка */
-        .btn-main {
-            background-color: #2ecc71; /* Цвет Телеграма */
-            color: white;
-            padding: 15px 40px;
-            font-size: 1.2em;
-            border-radius: 50px;
-            font-weight: bold;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
-            transition: 0.3s;
-        }
-        .btn-main:hover { transform: scale(1.05); background-color: #27ae60; }
-
-        /* Секция с товарами */
-        .catalog { padding: 50px 20px; text-align: center; background-color: #f9f9f9; }
-        .catalog h2 { font-size: 2em; margin-bottom: 40px; }
-
+        /* Секция каталога */
+        .catalog { padding: 60px 20px; text-align: center; background-color: #f9f9f9; }
         .cards-container {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
+            margin-top: 40px;
         }
-<section id="order-section" style="padding: 50px 20px; background-color: #f4f4f4; text-align: center;">
-    <h2 style="margin-bottom: 20px;">Оформить заказ на принт</h2>
-    <p style="margin-bottom: 30px;">Заполните форму ниже, и я свяжусь с вами для уточнения деталей.</p>
-
-    <div style="max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <form action="https://formspree.io/f/xykkkkge" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
-            
-            <label style="text-align: left; font-weight: bold;">Ваше имя:</label>
-            <input type="text" name="name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
-
-            <label style="text-align: left; font-weight: bold;">Ваш Email или телефон:</label>
-            <input type="text" name="contact" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;">
-
-            <label style="text-align: left; font-weight: bold;">Ваше сообщение (какой принт нужен):</label>
-            <textarea name="message" rows="4" required style="padding: 12px; border: 1px solid #ccc; border-radius: 8px;"></textarea>
-
-            <button type="submit" style="background-color: #2ecc71; color: white; padding: 15px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; font-size: 1.1em; transition: 0.3s;">
-                Отправить заявку
-            </button>
-            
-        </form>
-    </div>
-</section>
         .card {
             background: white;
             border-radius: 15px;
             overflow: hidden;
             width: 300px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: 0.3s;
         }
         .card:hover { transform: translateY(-10px); }
-
-        /* Картинки товаров */
-        .card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
+        .card img { width: 100%; height: 300px; object-fit: cover; }
         .card-info { padding: 20px; }
-        .card-price { font-size: 1.2em; font-weight: bold; color: #e74c3c; margin-top: 10px; display: block; }
+        .price { color: #e74c3c; font-weight: bold; font-size: 1.2em; }
 
-        /* ПОДВАЛ (Контакты) */
-        .footer {
-            /* Фон для контактов */
+        /* Секция заявки с фоном contact_bg.jpg */
+        .order-section {
+            padding: 80px 20px;
             background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('static/contact_bg.jpg');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 60px 20px;
             text-align: center;
         }
-        .contact-link {
-            display: inline-block;
-            margin-top: 20px;
-            color: #fff;
-            font-size: 1.5em;
-            border: 2px solid white;
-            padding: 10px 30px;
-            border-radius: 10px;
+        .form-container {
+            max-width: 450px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+        button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1em;
             transition: 0.3s;
         }
-        .contact-link:hover { background: white; color: black; }
+        button:hover { background-color: #27ae60; }
+
+        .footer { background: #1a1a1a; color: #888; padding: 30px; text-align: center; }
     </style>
 </head>
 <body>
 
-    <div class="hero">
-        <h1>Принты на заказ | Шарья</h1>
-        <p>Качественная печать на футболках и одежде. Сделаем твой уникальный стиль.</p>
-        <a href="https://t.me/petrsmirnov2004" class="btn-main">Заказать в Telegram</a>
-    </div>
+    <header class="hero">
+        <h1>Студия печати в Шарье</h1>
+        <p>Индивидуальные принты на одежде за 24 часа</p>
+    </header>
 
-    <div class="catalog">
+    <section class="catalog">
         <h2>Наши работы</h2>
         <div class="cards-container">
-
             <div class="card">
-                <img src="static/photo1.jpg" alt="Принт с машиной">
+                <img src="static/photo1.jpg" alt="Футболка с авто">
                 <div class="card-info">
-                    <h3>Футболка с авто</h3>
-                    <p>Любые марки, высокое качество печати.</p>
-                    <span class="card-price">от 1200 ₽</span>
+                    <h3>Футболки с авто</h3>
+                    <p>Любые марки машин в высоком качестве</p>
+                    <span class="price">от 1200 ₽</span>
                 </div>
             </div>
-
             <div class="card">
                 <img src="static/photo2.jpg" alt="Авторский принт">
                 <div class="card-info">
-                    <h3>Авторский дизайн</h3>
-                    <p>Твоя идея — наше исполнение.</p>
-                    <span class="card-price">от 1000 ₽</span>
+                    <h3>Свой дизайн</h3>
+                    <p>Напечатаем твою картинку или текст</p>
+                    <span class="price">от 1000 ₽</span>
                 </div>
             </div>
-
             <div class="card">
                 <img src="static/photo3.jpg" alt="Парные футболки">
                 <div class="card-info">
-                    <h3>Парные футболки</h3>
-                    <p>Отличный подарок для двоих.</p>
-                    <span class="card-price">от 1900 ₽ (за две)</span>
+                    <h3>Парные коллекции</h3>
+                    <p>Лучший подарок для влюбленных</p>
+                    <span class="price">от 1900 ₽</span>
                 </div>
             </div>
-
         </div>
-    </div>
+    </section>
 
-    <div class="footer">
-        <h2>Свяжитесь с нами</h2>
-        <p>Готовы сделать заказ или есть вопросы?</p>
-        <p>Телефон: +7 (953) 641-50-81</p>
+    <section id="order" class="order-section">
+        <h2 style="margin-bottom: 20px;">Оформить заказ</h2>
+        <p style="margin-bottom: 30px;">Заполни форму, и я отвечу в ближайшее время</p>
+        <div class="form-container">
+            <form action="https://formspree.io/f/xykkkkge" method="POST">
+                <input type="text" name="name" placeholder="Как тебя зовут?" required>
+                <input type="text" name="contact" placeholder="Телефон или Telegram" required>
+                <textarea name="message" rows="4" placeholder="Опиши свою идею (размер, цвет, фото)" required></textarea>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </section>
 
-        <a href="https://t.me/petrsmirnov2004" class="contact-link">Написать в Telegram</a>
-    </div>
+    <footer class="footer">
+        <p>г. Шарья, Костромская область</p>
+        <p>Тел: +7 (953) 641-50-81 | TG: @petrsmirnov2004</p>
+    </footer>
 
 </body>
-
 </html>
-
