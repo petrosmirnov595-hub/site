@@ -1,148 +1,135 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head<meta name="yandex-verification" content="03b7f3347deed837" >>
+<head>
     <meta charset="UTF-8">
-    <link rel="icon" href="static/photo1.jpg" type="image/jpeg">
-    
-<meta property="og:image" content="https://petrosmirnov595-hub.github.io/site/static/photo2.jpg">
-<meta property="og:title" content="Принты на заказ | Шарья">
-<meta property="og:description" content="Качественная печать на футболках. Заказывайте прямо сейчас!">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Бренд Петра Смирнова | Оригинальная одежда</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <meta name="yandex-verification" content="03b7f3347deed837">
+    
+    <link rel="icon" href="static/photo1.jpg" type="image/jpeg">
+
+    <title>Принты на заказ | Шарья</title>
+    <meta name="description" content="Качественная печать на футболках в Шарье. Оригинальная одежда от Петра Смирнова.">
+    <meta property="og:image" content="https://petrosmirnov595-hub.github.io/site/static/photo2.jpg">
+    <meta property="og:title" content="Принты на заказ | Шарья">
+    <meta property="og:description" content="Заказывайте уникальные футболки прямо сейчас!">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        * { box-sizing: border-box; scroll-behavior: smooth; }
-        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #222; background-color: #fff; }
+        body { margin: 0; font-family: 'Montserrat', sans-serif; color: #333; line-height: 1.6; }
         
-        /* Навигация */
-        nav {
-            position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95);
-            padding: 15px 20px; display: flex; justify-content: space-around;
-            z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        nav a { text-decoration: none; color: #333; font-weight: 700; font-size: 0.9em; text-transform: uppercase; }
-
-        /* Шапка */
         .hero {
-            height: 100vh; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('static/sharya.jpg');
-            background-size: cover; background-position: center;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            color: white; text-align: center; padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('static/sharya.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
         }
-        .hero h1 { font-size: 3.5em; margin: 0; }
-        .hero p { font-size: 1.2em; max-width: 600px; margin-top: 20px; }
 
-        /* Секция: Обо мне */
-        .about { padding: 100px 20px; max-width: 900px; margin: 0 auto; text-align: center; }
-        .about h2 { font-size: 2.5em; margin-bottom: 30px; }
-        .about-text { font-size: 1.1em; line-height: 1.8; color: #555; text-align: justify; }
+        .catalog { padding: 50px 20px; text-align: center; background-color: #f9f9f9; }
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 280px; object-fit: cover; }
+        .card-info { padding: 20px; }
 
-        /* Секция: Витрина (Каталог) */
-        .catalog { padding: 80px 20px; background: #f9f9f9; text-align: center; }
-        .empty-showcase { padding: 40px; border: 2px dashed #ccc; border-radius: 20px; color: #888; margin-top: 30px; }
-        .cards-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
-        .card { background: white; border-radius: 15px; overflow: hidden; width: 300px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-        .card img { width: 100%; height: 250px; object-fit: cover; filter: grayscale(100%); transition: 0.3s; }
-        .card:hover img { filter: grayscale(0%); }
-
-        /* Секция: Отзывы */
-        .reviews { padding: 80px 20px; text-align: center; }
-        .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 40px; }
-        .review-item { padding: 30px; background: #fff; border-left: 5px solid #2ecc71; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: left; }
-
-        /* Форма заявки */
-        .contact { padding: 100px 20px; background: #1a1a1a; color: white; text-align: center; }
-        .form-container { max-width: 500px; margin: 40px auto 0; }
-        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; border-radius: 8px; border: none; }
-        button { width: 100%; padding: 18px; background: #2ecc71; color: white; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 1.1em; transition: 0.3s; }
-        button:hover { background: #27ae60; transform: scale(1.02); }
-
-        footer { padding: 40px; background: #111; color: #666; text-align: center; border-top: 1px solid #222; }
+        .order-section {
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('static/contact_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        input, textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+        }
+        .btn-submit {
+            background-color: #2ecc71;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: 0.3s;
+        }
+        .btn-submit:hover { background-color: #27ae60; }
+        
+        .footer { background: #111; color: #777; padding: 20px; text-align: center; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#home">Главная</a>
-        <a href="#about">Основатель</a>
-        <a href="#catalog">Витрина</a>
-        <a href="#reviews">Отзывы</a>
-        <a href="#order">Заказать</a>
-    </nav>
-
-    <div id="home" class="hero">
-        <h1>СМИРНОВ ПЁТР</h1>
-        <p>Авторская одежда с оригинальными принтами. Создано в Шарье.</p>
-    </div>
-
-    <section id="about" class="about">
-        <h2>Основатель бренда</h2>
-        <div class="about-text">
-            <p>Приветствую! Меня зовут <strong>Смирнов Пётр Сергеевич</strong>. Я основатель этого бренда. Моя цель — создавать не просто одежду, а способ самовыражения для каждого. Мы начинали с индивидуальных принтов, и теперь переходим к созданию полноценных оригинальных коллекций.</p>
-            <p>Каждое изделие проходит через мой личный контроль. Сейчас мы находимся на стадии обновления ассортимента, но философия остается прежней: качество, уникальность и внимание к деталям. В скором времени вы сможете заказать наши флагманские модели, которые подчеркнут ваш стиль.</p>
-        </div>
+    <section class="hero">
+        <h1>Принты на заказ Шарья</h1>
+        <p>Твой стиль — твои правила. Печать за 24 часа.</p>
     </section>
 
-    <section id="catalog" class="catalog">
-        <h2>Витрина</h2>
-        <p>Наши примеры работ. Скоро здесь появится новая коллекция!</p>
+    <section class="catalog">
+        <h2>Каталог работ</h2>
         <div class="cards-container">
             <div class="card">
-                <img src="static/photo1.jpg" alt="Пример 1">
-                <div style="padding: 15px;"><h3>Car Series</h3><p>Скоро в продаже</p></div>
+                <img src="static/photo1.jpg" alt="Футболка 1">
+                <div class="card-info"><h3>Авто-принты</h3><p>Для настоящих любителей авто</p></div>
             </div>
             <div class="card">
-                <img src="static/photo2.jpg" alt="Пример 2">
-                <div style="padding: 15px;"><h3>Original Art</h3><p>В разработке</p></div>
+                <img src="static/photo2.jpg" alt="Футболка 2">
+                <div class="card-info"><h3>Твой дизайн</h3><p>Любая картинка на заказ</p></div>
             </div>
             <div class="card">
-                <img src="static/photo3.jpg" alt="Пример 3">
-                <div style="padding: 15px;"><h3>Sharya Collection</h3><p>Лимитированная серия</p></div>
-            </div>
-        </div>
-        <div class="empty-showcase">
-            🛒 Витрина временно обновляется. Готовим для вас нечто особенное!
-        </div>
-    </section>
-
-    <section id="reviews" class="reviews">
-        <h2>Отзывы клиентов</h2>
-        <div class="review-grid">
-            <div class="review-item">
-                <p>"Заказывал футболку с машиной. Качество печати на высоте, после 10 стирок как новая!"</p>
-                <strong>— Александр, г. Шарья</strong>
-            </div>
-            <div class="review-item">
-                <p>"Пётр помог с дизайном, сделал всё быстро. Очень довольна результатом."</p>
-                <strong>— Мария</strong>
-            </div>
-            <div class="review-item">
-                <p>"Лучшее место в городе, если нужен уникальный подарок. Жду новую коллекцию!"</p>
-                <strong>— Дмитрий</strong>
+                <img src="static/photo3.jpg" alt="Футболка 3">
+                <div class="card-info"><h3>Парные фото</h3><p>Идеально для подарка</p></div>
             </div>
         </div>
     </section>
 
-    <section id="order" class="contact">
-        <h2>Предзаказ и сотрудничество</h2>
-        <p>Оставьте заявку, и вы первыми узнаете о выходе новой коллекции!</p>
+    <section class="order-section">
+        <h2>Оформить заказ</h2>
+        <p>Заполни форму, и я свяжусь с тобой в Telegram или по телефону</p>
         <div class="form-container">
             <form action="https://formspree.io/f/xykkkkge" method="POST">
-                <input type="text" name="name" placeholder="Имя Фамилия" required>
-                <input type="text" name="contact" placeholder="Телефон или Telegram" required>
-                <textarea name="message" rows="5" placeholder="Ваши пожелания или вопрос Петру Сергеевичу"></textarea>
-                <button type="submit">Связаться со мной</button>
+                <input type="text" name="name" placeholder="Твоё имя" required>
+                <input type="text" name="contact" placeholder="Телефон или @username" required>
+                <textarea name="message" rows="4" placeholder="Опиши, какой принт хочешь" required></textarea>
+                <button type="submit" class="btn-submit">Отправить заявку</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <p>© 2026 Смирнов Пётр Сергеевич. Все права защищены.</p>
-        <p>Шарья, Костромская область | @petrsmirnov2004</p>
+    <footer class="footer">
+        <p>г. Шарья | +7 (953) 641-50-81 | @petrsmirnov2004</p>
     </footer>
 
 </body>
 </html>
-
-
-
